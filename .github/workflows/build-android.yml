@@ -1,5 +1,8 @@
 name: "Android Build"
 
+on:
+  workflow_call:
+    
 jobs:
   build-android:
     runs-on: ubuntu-latest
@@ -36,7 +39,7 @@ jobs:
           cd android && ./gradlew assembleDebug --no-daemon
         id: build_apk
       
-      -name: Upload Artifact
+      - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
           name: app-release.apk
