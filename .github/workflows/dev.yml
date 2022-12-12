@@ -1,0 +1,9 @@
+name: Develop Updated
+
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  build-android:
+    uses: ./.github/workflows/build-android.yml
